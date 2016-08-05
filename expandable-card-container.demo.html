@@ -1,0 +1,68 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/expandable-card/expandable-card.html">
+
+<dom-module id="expandable-card-container">
+      <template>
+      <style>
+      :host {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+      }
+
+      #placeholder {
+            display: none;
+      }
+
+      </style>
+                  <expandable-card id="placeholder"></expandable-card>
+                  <template is="dom-repeat" items="{{cards}}" as="card">
+                       <expandable-card
+                         retracted-title="[[card.retractedTitle]]"
+                         retracted-content="[[card.retractedContent]]"
+                         expanded-title="[[card.expandedTitle]]"
+                         expanded-content="[[card.expandedContent]]">
+                   </expandable-card>
+                  </template>
+            </template>
+
+<script>
+Polymer({
+      is: 'expandable-card-container',
+      properties: {
+            cards: {
+                  type: Array,
+                  value: [
+                  {
+                        retractedTitle: 'Retracted title 1',
+                        retractedContent: 'Retracted content 1',
+                        expandedTitle: 'Expanded title 1',
+                        expandedContent: 'Expanded content 1'
+                  },
+                  {
+                        retractedTitle: 'Retracted title 2',
+                        retractedContent: 'Retracted content 2',
+                        expandedTitle: 'Expanded title 2',
+                        expandedContent: 'Expanded content 2'
+                  }
+            ],
+            }
+      },
+      listeners: {
+            "expanding": "_onExpand",
+            "retracting": "_onRetract"
+      },
+      _onExpand: function(){
+            this.$.placeholder.style.display = 'block';
+      },
+      _onRetract: function(){
+            this.$.placeholder.style.display = 'none';
+      }
+
+});
+</script>
+</dom-module>
