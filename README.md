@@ -1,4 +1,4 @@
-`expandable-card-container` is a component that handles mutltiple `expandable-card`
+`expandable-card-container` is a component that handles multiple `expandable-card`
 
 Example:
 
@@ -7,7 +7,7 @@ Example:
 ```
 
 Where cards is an Array of Objects. Each object describes a `expandable-card`
-An `expandable-card` (in the expanded state) will fit the size of the `expandable-card-container`.
+A `expandable-card` (in the expanded state) will fit the size of the `expandable-card-container`.
 If you want to set the geometry of the `expandable-card-container`, use `--container-mixin`.
 
 To be able to use `expandable-card-container` you will have to use `expandable-card`
