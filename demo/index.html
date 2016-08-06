@@ -10,7 +10,7 @@
     <link rel="import" href="../bower_components/iron-demo-helpers/demo-pages-shared-styles.html">
     <link rel="import" href="../bower_components/iron-demo-helpers/demo-snippet.html">
 
-    <link rel="import" href="../expandable-card-container.demo.html">
+    <link rel="import" href="../expandable-card-container_local.html">
 
     <style is="custom-style" include="demo-pages-shared-styles">
       body{
@@ -20,8 +20,19 @@
     </style>
   </head>
   <body>
-
-        <expandable-card-container></expandable-card-container>
-
+             <expandable-card-container cards='[
+            {
+                 "retractedTitle": "Retracted title 1",
+                 "retractedContent": "Retracted content 1",
+                 "expandedTitle": "Expanded title 1",
+                 "expandedContent": "Expanded content 1"
+            },
+            {
+                 "retractedTitle": "Retracted title 2",
+                 "retractedContent": "Retracted content 2",
+                 "expandedTitle": "Expanded title 2",
+                 "expandedContent": "Expanded content 2"
+            }
+     ]'></expandable-card-container>
   </body>
 </html>

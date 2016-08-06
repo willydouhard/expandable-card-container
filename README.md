@@ -1,38 +1,23 @@
-# \<expandable-card-container\>
+`expandable-card-container` is a component that handles mutltiple `expandable-card`
 
-A container that handles multiple expandable-card
+Example:
 
-## Install the Polymer-CLI
-
-First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve your application locally.
-
-## Viewing Your Application
-
-```
-$ polymer serve
+```html
+<expandable-card-container cards="[[cards]]"></expandable-card-container>
 ```
 
-## Building Your Application
+Where cards is an Array of Objects. Each object describes a `expandable-card`
+An `expandable-card` (in the expanded state) will fit the size of the `expandable-card-container`.
+If you want to set the geometry of the `expandable-card-container`, use `--container-mixin`.
 
-```
-$ polymer build
-```
+To be able to use `expandable-card-container` you will have to use `expandable-card`
+[expandable-card](https://customelements.io/willydouhard/expandable-card/)
 
-This will create a `build/` folder with `bundled/` and `unbundled/` sub-folders
-containing a bundled (Vulcanized) and unbundled builds, both run through HTML,
-CSS, and JS optimizers.
+### Styling
+The following custom properties and mixins are available for styling:
 
-You can serve the built versions by giving `polymer serve` a folder to serve
-from:
+| Custom property | Description | Default |
+| ----------------|-------------|---------- |
+| `--container-mixin` | Mixin applied to the container | `{}` |
 
-```
-$ polymer serve build/bundled
-```
-
-## Running Tests
-
-```
-$ polymer test
-```
-
-Your application is already set up to be tested via [web-component-tester](https://github.com/Polymer/web-component-tester). Run `polymer test` to run your application's test suite locally.
+@demo demo/index.html

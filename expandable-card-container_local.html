@@ -2,6 +2,29 @@
 <link rel="import" href="bower_components/expandable-card/expandable-card.html">
 
 <dom-module id="expandable-card-container">
+      <!--
+      `expandable-card-container` is a component that handles mutltiple `expandable-card`
+
+      Example:
+
+      ```html
+      <expandable-card-container cards="[[cards]]"></expandable-card-container>
+      ```
+
+      Where cards is an Array of Objects. Each object describes a `expandable-card`
+      An `expandable-card` (in the expanded state) will fit the size of the `expandable-card-container`.
+      If you want to set the geometry of the `expandable-card-container`, use `--container-mixin`.
+
+      To be able to use `expandable-card-container` you will have to use `expandable-card`
+      [expandable-card](https://customelements.io/willydouhard/expandable-card/)
+
+      ### Styling
+      The following custom properties and mixins are available for styling:
+      Custom property | Description | Default
+      ----------------|-------------|----------
+      `--container-mixin` | Mixin applied to the container | `{}`
+      @demo demo/index.html
+      -->
       <template>
       <style>
       :host {
@@ -11,7 +34,8 @@
             flex-wrap: wrap;
             justify-content: space-around;
             align-items: center;
-            position: relative;
+            position: relative !important;
+            @apply(--container-mixin);
       }
 
       #placeholder {
@@ -35,21 +59,7 @@ Polymer({
       is: 'expandable-card-container',
       properties: {
             cards: {
-                  type: Array,
-                  value: [
-                  {
-                        retractedTitle: 'Retracted title 1',
-                        retractedContent: 'Retracted content 1',
-                        expandedTitle: 'Expanded title 1',
-                        expandedContent: 'Expanded content 1'
-                  },
-                  {
-                        retractedTitle: 'Retracted title 2',
-                        retractedContent: 'Retracted content 2',
-                        expandedTitle: 'Expanded title 2',
-                        expandedContent: 'Expanded content 2'
-                  }
-            ],
+                  type: Array
             }
       },
       listeners: {
