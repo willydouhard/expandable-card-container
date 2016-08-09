@@ -12,6 +12,9 @@
   "keywords": [
     "web-components"
   ],
+  "scripts": {
+  "test": "wct --plugin sauce"
+      },
   "description": "A container that handles multiple expandable-card",
   "main": "expandable-card-container.html",
   "dependencies": {
