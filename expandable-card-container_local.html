@@ -3,6 +3,14 @@
 
 <dom-module id="expandable-card-container">
       <!--
+      WARNING: This component is relying on the web animation api. The poly fill is in the component dependencies, so you just have to include it in your index.html file.
+
+      Example:
+
+      ```html
+      <script src="bower_components/web-animations-js/web-animations-next-lite.min.js"></script>
+      ```
+
       `expandable-card-container` is a component that handles multiple `expandable-card`
 
       Example:
@@ -26,7 +34,6 @@
       | `--container-mixin` | Mixin applied to the container | `{}` |
 
       @demo demo/index.html
-
       -->
       <template>
       <style>
