@@ -20,7 +20,7 @@
     </style>
   </head>
   <body>
-             <expandable-card-container cards='[
+             <expandable-card-container items='[
             {
                  "retractedTitle": "Retracted title 1",
                  "retractedContent": "Retracted content 1",
@@ -32,6 +32,30 @@
                  "retractedContent": "Retracted content 2",
                  "expandedTitle": "Expanded title 2",
                  "expandedContent": "Expanded content 2"
-            }]'></expandable-card-container>
+           }]' as='item'>
+                 <template id="card">
+                 <expandable-card>
+                       <!-- Content displayed when retracted -->
+                      <div id="retracted" class="container">
+                            <paper-card heading="[[item.retractedTitle]]">
+                                  <div class="card-content">[[item.retractedContent]]</div>
+                                  <div class="card-actions">
+                                              <paper-button class="toggle" noink>Expand</paper-button>
+                                  </div>
+                            </paper-card>
+                      </div>
+
+                       <!-- Content displayed when expanded -->
+                       <div id="expanded" class="container">
+                              <div id="expandedHeader" class="container-header">
+                                    <paper-icon-button class="container-header-side toggle"noink icon="arrow-back"></paper-icon-button>
+                                    <div>[[item.expandedTitle]]</div>
+                                    <div class="container-header-side"></div>
+                              </div>
+                              <div id="expandedContent">[[item.expandedContent]]</div>
+                       </div>
+                 </expandable-card>
+           </template>
+     </expandable-card-container>
   </body>
 </html>
