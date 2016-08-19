@@ -39,7 +39,8 @@ Example:
 	    </div>
     </expandable-card>
 </template>
-</expandable-card-container>```
+</expandable-card-container>
+```
 
 Where cards is an Array of Objects. Each object describes a `expandable-card`
 A `expandable-card` (in the expanded state) will fit the size of the `expandable-card-container`.
