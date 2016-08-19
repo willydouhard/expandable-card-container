@@ -15,12 +15,37 @@ Example:
 Example:
 
 ```html
-<expandable-card-container cards="[[cards]]"></expandable-card-container>
-```
+<expandable-card-container items='[[cards]]' as='item'>
+    <template id="card">
+    <expandable-card>
+	    <!-- Content displayed when retracted -->
+	   <div id="retracted" class="container">
+		   <paper-card heading="[[item.retractedTitle]]">
+			   <div class="card-content">[[item.retractedContent]]</div>
+			   <div class="card-actions">
+					   <paper-button class="toggle" noink>Expand</paper-button>
+			   </div>
+		   </paper-card>
+	   </div>
+
+	    <!-- Content displayed when expanded -->
+	    <div id="expanded" class="container">
+		     <div id="expandedHeader" class="container-header">
+			     <paper-icon-button class="container-header-side toggle"noink icon="arrow-back"></paper-icon-button>
+			     <div>[[item.expandedTitle]]</div>
+			     <div class="container-header-side"></div>
+		     </div>
+		     <div id="expandedContent">[[item.expandedContent]]</div>
+	    </div>
+    </expandable-card>
+</template>
+</expandable-card-container>```
 
 Where cards is an Array of Objects. Each object describes a `expandable-card`
 A `expandable-card` (in the expanded state) will fit the size of the `expandable-card-container`.
 If you want to set the geometry of the `expandable-card-container`, use `--container-mixin`.
+
+See [expandable-card](https://customelements.io/willydouhard/expandable-card/) for more information about `expandable-card`
 
 ### Styling
 The following custom properties and mixins are available for styling:
