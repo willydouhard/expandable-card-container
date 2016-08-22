@@ -46,7 +46,7 @@ Where cards is an Array of Objects. Each object describes a `expandable-card`
 A `expandable-card` (in the expanded state) will fit the size of the `expandable-card-container`.
 If you want to set the geometry of the `expandable-card-container`, use `--container-mixin`.
 
-See [expandable-card](https://customelements.io/willydouhard/expandable-card/) for more information about `expandable-card`
+See [expandable-card](https://github.com/willydouhard/expandable-card/) for more information about `expandable-card`
 
 ### Styling
 The following custom properties and mixins are available for styling:
