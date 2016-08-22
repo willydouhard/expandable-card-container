@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <title>expandable-card-container demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-animations-js/web-animations-next-lite.min.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+
+    <link rel="import" href="../expandable-card-container.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+      body{
+            margin: 0;
+            padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+             <expandable-card-container items='[
+            {
+                 "retractedTitle": "Retracted title 1",
+                 "retractedContent": "Retracted content 1",
+                 "expandedTitle": "Expanded title 1",
+                 "expandedContent": "Expanded content 1"
+            },
+            {
+                 "retractedTitle": "Retracted title 2",
+                 "retractedContent": "Retracted content 2",
+                 "expandedTitle": "Expanded title 2",
+                 "expandedContent": "Expanded content 2"
+           }]' as='item'>
+                 <template id="card">
+                 <expandable-card>
+                       <!-- Content displayed when retracted -->
+                      <div id="retracted" class="container">
+                            <paper-card heading="[[item.retractedTitle]]">
+                                  <div class="card-content">[[item.retractedContent]]</div>
+                                  <div class="card-actions">
+                                              <paper-button class="toggle" noink>Expand</paper-button>
+                                  </div>
+                            </paper-card>
+                      </div>
+
+                       <!-- Content displayed when expanded -->
+                       <div id="expanded" class="container">
+                              <div id="expandedHeader" class="container-header">
+                                    <paper-icon-button class="container-header-side toggle"noink icon="arrow-back"></paper-icon-button>
+                                    <div>[[item.expandedTitle]]</div>
+                                    <div class="container-header-side"></div>
+                              </div>
+                              <div id="expandedContent">[[item.expandedContent]]</div>
+                       </div>
+                 </expandable-card>
+           </template>
+     </expandable-card-container>
+  </body>
+</html>
