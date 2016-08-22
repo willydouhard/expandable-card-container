@@ -19,7 +19,7 @@
   "main": "expandable-card-container.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0",
-    "expandable-card": "*"
+    "expandable-card": "^0.0.1"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
