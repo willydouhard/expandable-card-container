@@ -1,4 +1,4 @@
-_[Demo and API docs](https://willydouhard.github.io/expandable-card-container/components/expandable-card-container/demo)_
+_[Demo](https://willydouhard.github.io/expandable-card-container/components/expandable-card-container/demo)_
 
 WARNING: This component is relying on the web animation api. The poly fill is in the component dependencies, so you just have to include it in your index.html file.
 
